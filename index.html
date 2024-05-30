@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab-menu</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <main>
+        <h2>ABOUT</h2>
+        <h4>Lorem ipsum dolor sit amet Lorem ipsum dolor sit.</h4>
+        <div class="box-m">
+            <figure><img src="img/hero-bcg.jpeg" alt=""></figure>
+            <div class="box">
+                <ul>
+                    <li class="active" data-page="history" onclick="tabs(this)">History</li>
+                    <li class="diactive" data-page="vision" onclick="tabs(this)">Vision</li>
+                    <li class="diactive" data-page="goals" onclick="tabs(this)">Goals</li>
+                </ul>
+                <div class="txt">
+                    <h4>History</h4>
+                    <p>ffffLorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, reiciendis vero
+                        eligendi tempore veniam labore! Consequatur sunt commodi deserunt rem.Lorem ipsum dolor sit amet
+                        consectetur adipisicing elcorporis fugit, assumenda deserunt dicta porro quae culpa
+                        numquam?</p>
+                    <h4>Vision</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quaerat veritatis corporis
+                        fugit, assumenda deserunt dicta porro quae culpa numquam?</p>
+                    <h4>Goals</h4>
+                    <p>Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus molestiae repudiandae,
+                        asperiores beatae consequuntur dolore commodi culpa pariatur, dolorum placeat sapiente quibusdam
+                        numquaure voluptas qui dolorem dolor necessitatibus vel iste deleniti dolore
+                        ipsa amet quasi corporis! Nostrum ipsa quos cum saepe! Placeat enim eos voluptatem eligendi,
+                        inventore, consequuntur a soluta assumenda voluptas est exercitationem minus natus eius. Ad
+                        possimus placeat soluta qui recusandae animi, necessitatibus sapiente nam nemo cupiditate? Fuga
+                        iusto, consectetur nobis ut commodi, velit, culp
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, laudantium!fugit, assumenda
+                        deserunt dicta porro quae culpa numquam?</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const li = document.querySelectorAll('ul>li')
+        const p = document.querySelectorAll('.txt>p')
+        const h4 = document.querySelectorAll('.txt>h4')
+
+        function tabs(s) {
+
+            p.forEach((val) => {
+                val.style.display = 'none'
+            })
+            h4.forEach((val) => {
+                val.style.display = 'none'
+            })
+
+
+            let temp = s.getAttribute('data-page')
+            if (temp == 'history') {
+                li[0].setAttribute('class', 'active')
+                li[1].setAttribute('class', 'diactive')
+                li[2].setAttribute('class', 'diactive')
+                p[0].style.display = 'flex'
+                h4[0].style.display = 'flex'
+
+
+            } else if (temp == 'vision') {
+                li[1].setAttribute('class', 'active')
+                li[0].setAttribute('class', 'diactive')
+                li[2].setAttribute('class', 'diactive')
+
+                p[1].style.display = 'flex'
+                h4[1].style.display = 'flex'
+
+
+            } else {
+                li[2].setAttribute('class', 'active')
+                li[0].setAttribute('class', 'diactive')
+                li[1].setAttribute('class', 'diactive')
+                p[2].style.display = 'flex'
+                h4[2].style.display = 'flex'
+
+            }
+        }
+    </script>
+</body>
+
+</html>
